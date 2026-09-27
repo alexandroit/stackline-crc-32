@@ -1,3 +1,15 @@
+# @stackline/crc-32
+
+Maintained fork of [crc-32](https://github.com/SheetJS/js-crc32) 1.2.2. Apache-2.0; original copyright notices are retained.
+
+The `str` function encodes unpaired UTF-16 surrogates as U+FFFD, matching standard UTF-8 encoders. Valid strings, byte inputs, signed results, and seed behavior are preserved.
+
+Requires Node.js 20.19 or newer. No runtime dependencies.
+
+## Stackline development
+
+Run `npm ci`, `npm run build`, `npm test` and `npm run lint` and `npm run test:types`. The checked-in upstream fixtures and focused regression suite run without downloading external test data.
+
 # crc32
 
 Standard CRC-32 algorithm implementation in JS (for the browser and nodejs).
@@ -8,7 +20,7 @@ Emphasis on correctness, performance, and IE6+ support.
 With [npm](https://www.npmjs.org/package/crc-32):
 
 ```bash
-$ npm install crc-32
+$ npm install @stackline/crc-32
 ```
 
 When installed globally, npm installs a script `crc32` that computes the
@@ -31,7 +43,7 @@ checksum for a specified file or standard input.
 Using NodeJS or a bundler:
 
 ```js
-var CRC32 = require("crc-32");
+var CRC32 = require("@stackline/crc-32");
 ```
 
 In the browser, the `crc32.js` script can be loaded directly:
@@ -52,7 +64,7 @@ The module and CDNs also include a parallel script for CRC32C calculations.
 Using NodeJS or a bundler:
 
 ```js
-var CRC32C = require("crc-32/crc32c");
+var CRC32C = require("@stackline/crc-32/crc32c");
 ```
 
 In the browser, the `crc32c.js` script can be loaded directly:
@@ -85,7 +97,7 @@ The return value is a signed 32-bit integer.
 For example:
 
 ```js
-// var CRC32 = require('crc-32');               // uncomment this line if in node
+// var CRC32 = require('@stackline/crc-32');               // uncomment this line if in node
 CRC32.str("SheetJS")                            // -1647298270
 CRC32.bstr("SheetJS")                           // -1647298270
 CRC32.buf([ 83, 104, 101, 101, 116, 74, 83 ])   // -1647298270
@@ -98,7 +110,7 @@ CRC32.bstr("JS", crc32)                         // -1647298270  "SheetJS"
 [CRC32.bstr("\u2603"), CRC32.bstr("\u0003")]    // [  1259060791,  1259060791 ]
 [CRC32.buf([0x2603]),  CRC32.buf([0x0003])]     // [  1259060791,  1259060791 ]
 
-// var CRC32C = require('crc-32/crc32c');       // uncomment this line if in node
+// var CRC32C = require('@stackline/crc-32/crc32c');       // uncomment this line if in node
 CRC32C.str("SheetJS")                           // -284764294
 CRC32C.bstr("SheetJS")                          // -284764294
 CRC32C.buf([ 83, 104, 101, 101, 116, 74, 83 ])  // -284764294
