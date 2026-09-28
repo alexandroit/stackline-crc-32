@@ -1,23 +1,47 @@
 # @stackline/crc-32
 
+> CRC-32 and CRC-32C checksums for strings and byte buffers, preserving the SheetJS CRC API.
+
+[![npm version](https://img.shields.io/npm/v/@stackline/crc-32.svg?style=flat-square)](https://www.npmjs.com/package/@stackline/crc-32)
+[![license](https://img.shields.io/npm/l/@stackline/crc-32.svg?style=flat-square)](https://github.com/alexandroit/stackline-crc-32/blob/main/LICENSE)
+[![GitHub repository](https://img.shields.io/badge/GitHub-Repository-181717?style=flat-square&logo=github)](https://github.com/alexandroit/stackline-crc-32)
+
+**[Documentation](https://github.com/alexandroit/stackline-crc-32#readme)** |
+**[npm](https://www.npmjs.com/package/@stackline/crc-32)** |
+**[Issues](https://github.com/alexandroit/stackline-crc-32/issues)** |
+**[Repository](https://github.com/alexandroit/stackline-crc-32)**
+
+**Package version:** `1.0.1`
+
+## Why this package?
+
 Maintained fork of [crc-32](https://github.com/SheetJS/js-crc32) 1.2.2. Apache-2.0; original copyright notices are retained.
 
 The `str` function encodes unpaired UTF-16 surrogates as U+FFFD, matching standard UTF-8 encoders. Valid strings, byte inputs, signed results, and seed behavior are preserved.
 
 Requires Node.js 20.19 or newer. No runtime dependencies.
 
-## Stackline development
-
-Run `npm ci`, `npm run build`, `npm test` and `npm run lint` and `npm run test:types`. The checked-in upstream fixtures and focused regression suite run without downloading external test data.
-
-# crc32
-
 Standard CRC-32 algorithm implementation in JS (for the browser and nodejs).
 Emphasis on correctness, performance, and IE6+ support.
 
+## Compatibility
+
+| Item | Value |
+| --- | --- |
+| Package | `@stackline/crc-32@1.0.1` |
+| Supported Node.js | `>=20.19.0` |
+| Module entry | `crc32.js` (CommonJS) |
+| Runtime dependencies | 0 direct dependencies |
+| Types | `types/index.d.ts` |
+| CLI | `crc32` |
+
 ## Installation
 
-With [npm](https://www.npmjs.org/package/crc-32):
+```bash
+npm install @stackline/crc-32
+```
+
+With [npm](https://www.npmjs.com/package/@stackline/crc-32):
 
 ```bash
 $ npm install @stackline/crc-32
@@ -37,8 +61,7 @@ checksum for a specified file or standard input.
 
 </details>
 
-
-## Integration
+### Integration
 
 Using NodeJS or a bundler:
 
@@ -79,6 +102,11 @@ The script will manipulate `module.exports` if available .  This is not always
 desirable.  To prevent the behavior, define `DO_NOT_EXPORT_CRC`.
 
 ## Usage
+
+```js
+const CRC32 = require('@stackline/crc-32');
+console.log(CRC32.str('SheetJS')); // signed 32-bit checksum
+```
 
 In all cases, the relevant function takes an argument representing data and an
 optional second argument representing the starting "seed" (for rolling CRC).
@@ -142,7 +170,42 @@ crc32 = CRC32.buf(Buffer.from(bstr, "binary"), 0);
 This does not apply to browser `Buffer` shims, and thus is not implemented in
 the library directly.
 
-## Testing
+## Features
+
+### Performance
+
+`make perf` will run algorithmic performance tests (which should justify certain
+decisions in the code).
+
+The [`adler-32` project](http://git.io/adler32) has more performance notes
+
+## Security
+
+CRC checksums detect accidental corruption; they are not cryptographic hashes or authentication mechanisms.
+
+## API Surface
+
+The usage reference above documents the existing public API and its input/output behavior.
+
+## Local Development
+
+Clone the [repository](https://github.com/alexandroit/stackline-crc-32) and run the following commands from its root:
+
+```bash
+npm ci
+npm run build
+npm test
+npm run lint
+npm run test:types
+```
+
+The retained upstream development notes below include historical tooling; the commands above are the maintained package checks.
+
+### Stackline development
+
+Run `npm ci`, `npm run build`, `npm test` and `npm run lint` and `npm run test:types`. The checked-in upstream fixtures and focused regression suite run without downloading external test data.
+
+### Upstream testing
 
 `make test` will run the nodejs-based test.
 
@@ -188,25 +251,27 @@ $ crc32 --unsigned ~/Downloads/IE8.Win7.For.Windows.VMware.zip
 1891069052
 ```
 
-## Performance
+## Release Checklist
 
-`make perf` will run algorithmic performance tests (which should justify certain
-decisions in the code).
+1. Update the package version, lockfile, generated version fields, and changelog together.
+2. Run the development checks above and audit both `npm audit` and `npm audit --omit=dev`.
+3. Use the [GitHub publish workflow](https://github.com/alexandroit/stackline-crc-32/actions/workflows/publish.yml) with its `Prod` environment to publish the exact CI tarball.
+4. Verify public npm bytes, package identity, provenance, and the immutable GitHub release evidence.
 
-The [`adler-32` project](http://git.io/adler32) has more performance notes
+## Community and Support
+
+Report reproducible package issues in the [issue tracker](https://github.com/alexandroit/stackline-crc-32/issues).
+
+- [Stackline / Alexandro.Net](https://alexandro.net/)
+- [GitHub](https://github.com/alexandroit)
+- [Maintainer LinkedIn](https://www.linkedin.com/in/aleinfo/)
+- [Reddit community: r/Stackline](https://www.reddit.com/r/Stackline/)
 
 ## License
+
+[Apache-2.0](https://github.com/alexandroit/stackline-crc-32/blob/main/LICENSE). Original copyright notices and upstream attribution are retained.
 
 Please consult the attached LICENSE file for details.  All rights not explicitly
 granted by the Apache 2.0 license are reserved by the Original Author.
 
-## Badges
-
-[![Sauce Test Status](https://saucelabs.com/browser-matrix/crc32.svg)](https://saucelabs.com/u/crc32)
-
-[![Build Status](https://travis-ci.org/SheetJS/js-crc32.svg?branch=master)](https://travis-ci.org/SheetJS/js-crc32)
-[![Coverage Status](http://img.shields.io/coveralls/SheetJS/js-crc32/master.svg)](https://coveralls.io/r/SheetJS/js-crc32?branch=master)
-[![Dependencies Status](https://david-dm.org/sheetjs/js-crc32/status.svg)](https://david-dm.org/sheetjs/js-crc32)
-[![NPM Downloads](https://img.shields.io/npm/dt/crc-32.svg)](https://npmjs.org/package/crc-32)
-[![ghit.me](https://ghit.me/badge.svg?repo=sheetjs/js-xlsx)](https://ghit.me/repo/sheetjs/js-xlsx)
-[![Analytics](https://ga-beacon.appspot.com/UA-36810333-1/SheetJS/js-crc32?pixel)](https://github.com/SheetJS/js-crc32)
+See [NOTICE](https://github.com/alexandroit/stackline-crc-32/blob/main/NOTICE) for retained attribution.

@@ -1,12 +1,17 @@
 {
   "name": "@stackline/crc-32",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "author": "sheetjs",
-  "description": "Pure-JS CRC-32",
+  "description": "CRC-32 and CRC-32C checksums for strings and byte buffers, preserving the SheetJS CRC API",
   "keywords": [
+    "stackline",
     "crc",
     "crc32",
-    "checksum"
+    "checksum",
+    "crc-32",
+    "crc32c",
+    "binary",
+    "utf8"
   ],
   "bin": {
     "crc32": "bin/crc32.njs"
