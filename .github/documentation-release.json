@@ -1,0 +1,26 @@
+{
+  "repository": "alexandroit/stackline-crc-32",
+  "packages": [
+    {
+      "name": "@stackline/crc-32",
+      "path": "README.md",
+      "version": "1.0.1",
+      "baselineVersion": "1.0.0",
+      "keywords": [
+        "stackline",
+        "npm-package",
+        "crc-32",
+        "typescript",
+        "nodejs",
+        "crc",
+        "crc32",
+        "checksum"
+      ],
+      "homepage": "https://alexandro.net/docs/vanilla/crc-32/",
+      "baselineTarball": "https://registry.npmjs.org/@stackline/crc-32/-/crc-32-1.0.0.tgz",
+      "baselineIntegrity": "sha512-M4LMbe9IPBmI+xjuWpDRAJykoXv5loBUZ4DHN0kwEoI5bHGpOvh5Fp4C1EK1CpBOkV/6kS4C1IovCxRbRmiEig==",
+      "expectedSha512": "266f8462863abb7d1c70b51b02a48a83abb1602622a2e8c8f03f49dd3b24d84e7e808860f0d9e60767ea3118e51b9919dd4f21bede241b353b0eb612db52935a",
+      "tag": "docs-stackline-crc-32-v1.0.1"
+    }
+  ]
+}
