@@ -4,7 +4,7 @@
     {
       "name": "@stackline/crc-32",
       "path": "README.md",
-      "version": "1.0.1",
+      "version": "1.0.2",
       "baselineVersion": "1.0.0",
       "keywords": [
         "stackline",
@@ -19,8 +19,8 @@
       "homepage": "https://alexandro.net/docs/vanilla/crc-32/",
       "baselineTarball": "https://registry.npmjs.org/@stackline/crc-32/-/crc-32-1.0.0.tgz",
       "baselineIntegrity": "sha512-M4LMbe9IPBmI+xjuWpDRAJykoXv5loBUZ4DHN0kwEoI5bHGpOvh5Fp4C1EK1CpBOkV/6kS4C1IovCxRbRmiEig==",
-      "expectedSha512": "266f8462863abb7d1c70b51b02a48a83abb1602622a2e8c8f03f49dd3b24d84e7e808860f0d9e60767ea3118e51b9919dd4f21bede241b353b0eb612db52935a",
-      "tag": "docs-stackline-crc-32-v1.0.1"
+      "expectedSha512": "19f4ddd100b0beb7d8adcb59528bc13c076c0a361333b468f885f7edd377c9beaf43eebdc0915f4902318e7f8ad20cc7b8ba34895c63b67c3d47de0c46ced445",
+      "tag": "docs-stackline-crc-32-v1.0.2"
     }
   ]
 }
