@@ -5,13 +5,13 @@
   "description": "CRC-32 and CRC-32C checksums for strings and byte buffers, preserving the SheetJS CRC API",
   "keywords": [
     "stackline",
+    "npm-package",
+    "crc-32",
+    "typescript",
+    "nodejs",
     "crc",
     "crc32",
-    "checksum",
-    "crc-32",
-    "crc32c",
-    "binary",
-    "utf8"
+    "checksum"
   ],
   "bin": {
     "crc32": "bin/crc32.njs"
@@ -40,7 +40,7 @@
     "test:types": "tsc -p types/tsconfig.json",
     "lint": "node --check crc32.js && node --check crc32c.js && node --check < bin/crc32.njs"
   },
-  "homepage": "https://github.com/alexandroit/stackline-crc-32#readme",
+  "homepage": "https://alexandro.net/docs/vanilla/crc-32/",
   "files": [
     "crc32.js",
     "crc32c.js",
